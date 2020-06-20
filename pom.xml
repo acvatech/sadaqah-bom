@@ -8,9 +8,9 @@
         <version>2.3.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.sadaqah</groupId>
+    <groupId>io.sadaqah</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>parent</name>
     <description>Parent project</description>
 
