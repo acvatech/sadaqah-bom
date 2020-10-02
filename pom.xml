@@ -80,28 +80,28 @@
             <build>
                 <plugins>
                     <!--<plugin>-->
-                        <!--<groupId>org.codehaus.mojo</groupId>-->
-                        <!--<artifactId>exec-maven-plugin</artifactId>-->
-                        <!--<version>${exec-maven-plugin.version}</version>-->
-                        <!--<executions>-->
-                            <!--<execution>-->
-                                <!--<id>update-frontend-app-version</id>-->
-                                <!--<phase>generate-resources</phase>-->
-                                <!--<goals>-->
-                                    <!--<goal>exec</goal>-->
-                                <!--</goals>-->
-                                <!--<configuration>-->
-                                    <!--<workingDirectory>${frontendSrcDir}</workingDirectory>-->
-                                    <!--<executable>npm</executable>-->
-                                    <!--<arguments>-->
-                                        <!--<argument>version</argument>-->
-                                        <!--<argument>${project.version}</argument>-->
-                                        <!--<argument>&#45;&#45;allow-same-version</argument>-->
-                                        <!--<argument>&#45;&#45;no-git-tag-version</argument>-->
-                                    <!--</arguments>-->
-                                <!--</configuration>-->
-                            <!--</execution>-->
-                        <!--</executions>-->
+                    <!--<groupId>org.codehaus.mojo</groupId>-->
+                    <!--<artifactId>exec-maven-plugin</artifactId>-->
+                    <!--<version>${exec-maven-plugin.version}</version>-->
+                    <!--<executions>-->
+                    <!--<execution>-->
+                    <!--<id>update-frontend-app-version</id>-->
+                    <!--<phase>generate-resources</phase>-->
+                    <!--<goals>-->
+                    <!--<goal>exec</goal>-->
+                    <!--</goals>-->
+                    <!--<configuration>-->
+                    <!--<workingDirectory>${frontendSrcDir}</workingDirectory>-->
+                    <!--<executable>npm</executable>-->
+                    <!--<arguments>-->
+                    <!--<argument>version</argument>-->
+                    <!--<argument>${project.version}</argument>-->
+                    <!--<argument>&#45;&#45;allow-same-version</argument>-->
+                    <!--<argument>&#45;&#45;no-git-tag-version</argument>-->
+                    <!--</arguments>-->
+                    <!--</configuration>-->
+                    <!--</execution>-->
+                    <!--</executions>-->
                     <!--</plugin>-->
                     <plugin>
                         <groupId>com.github.eirslett</groupId>
@@ -187,6 +187,20 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>actuator</id>
+            <activation>
+                <file>
+                    <exists>project-uses-actuator</exists>
+                </file>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-actuator</artifactId>
+                </dependency>
+            </dependencies>
         </profile>
         <profile>
             <id>query-dsl</id>
