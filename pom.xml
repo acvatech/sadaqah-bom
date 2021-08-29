@@ -25,6 +25,7 @@
         <frontend-maven-plugin.version>1.6</frontend-maven-plugin.version>
         <maven-exec-plugin.version>1.6.0</maven-exec-plugin.version>
         <frontendSrcDir>${project.basedir}/src/main/ui</frontendSrcDir>
+        <springdoc.version>1.5.10</springdoc.version>
     </properties>
 
     <dependencies>
@@ -70,6 +71,67 @@
     </build>
 
     <profiles>
+        <profile>
+            <id>documented-api</id>
+            <activation>
+                <file>
+                    <exists>uses-api-docs</exists>
+                </file>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springdoc</groupId>
+                    <artifactId>springdoc-openapi-ui</artifactId>
+                    <version>${springdoc.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.springdoc</groupId>
+                    <artifactId>springdoc-openapi-data-rest</artifactId>
+                    <version>${springdoc.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.springdoc</groupId>
+                    <artifactId>springdoc-openapi-security</artifactId>
+                    <version>${springdoc.version}</version>
+                </dependency>
+            </dependencies>
+            <!--            <build>-->
+            <!--                <plugins>-->
+            <!--                    <plugin>-->
+            <!--                        <groupId>org.springframework.boot</groupId>-->
+            <!--                        <artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--                        <version>2.3.3.RELEASE</version>-->
+            <!--                        <executions>-->
+            <!--                            <execution>-->
+            <!--                                <id>pre-integration-test</id>-->
+            <!--                                <goals>-->
+            <!--                                    <goal>start</goal>-->
+            <!--                                </goals>-->
+            <!--                            </execution>-->
+            <!--                            <execution>-->
+            <!--                                <id>post-integration-test</id>-->
+            <!--                                <goals>-->
+            <!--                                    <goal>stop</goal>-->
+            <!--                                </goals>-->
+            <!--                            </execution>-->
+            <!--                        </executions>-->
+            <!--                    </plugin>-->
+            <!--                    <plugin>-->
+            <!--                        <groupId>org.springdoc</groupId>-->
+            <!--                        <artifactId>springdoc-openapi-maven-plugin</artifactId>-->
+            <!--                        <version>0.2</version>-->
+            <!--                        <executions>-->
+            <!--                            <execution>-->
+            <!--                                <phase>integration-test</phase>-->
+            <!--                                <goals>-->
+            <!--                                    <goal>generate</goal>-->
+            <!--                                </goals>-->
+            <!--                            </execution>-->
+            <!--                        </executions>-->
+            <!--                    </plugin>-->
+            <!--                </plugins>-->
+            <!--            </build>-->
+        </profile>
         <profile>
             <id>build-web-app</id>
             <activation>
