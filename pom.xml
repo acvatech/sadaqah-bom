@@ -10,7 +10,7 @@
     </parent>
     <groupId>io.sadaqah</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>parent</name>
     <description>Parent project</description>
 
@@ -26,12 +26,18 @@
         <maven-exec-plugin.version>1.6.0</maven-exec-plugin.version>
         <frontendSrcDir>${project.basedir}/src/main/ui</frontendSrcDir>
         <springdoc.version>1.5.10</springdoc.version>
+        <spring-framework.version>5.2.20.RELEASE</spring-framework.version>
+        <log4j2.version>2.17.0</log4j2.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
