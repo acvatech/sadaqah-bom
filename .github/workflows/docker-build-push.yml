@@ -53,7 +53,7 @@ jobs:
           # Adjust image names as needed
           # For GHCR (lowercase username/org): Suggest adding '-app' or similar to distinguish
           #images: ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}-app
-          #images: ghcr.io/acvatech/parent
+          images: ghcr.io/acvatech/parent
           #images: ghcr.io/${{ github.repository_owner }}/parent
           # For Docker Hub:
           # images: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}-app
