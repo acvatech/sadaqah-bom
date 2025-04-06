@@ -31,12 +31,12 @@ jobs:
           registry: ghcr.io
           # Use the default GITHUB_TOKEN for authentication with GHCR
           # within the same repository or organization.
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          #username: ${{ github.actor }}
+          #password: ${{ secrets.GITHUB_TOKEN }}
           # If GITHUB_TOKEN doesn't work (e.g., private repo, cross-org),
           # create a PAT with 'packages:write' scope and store it as a secret (e.g., GHCR_PAT)
-          #username: ${{ github.actor }}
-          #password: ${{ secrets.GHCR_PAT }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_PAT }}
 
       # --- OR ---
 
@@ -52,8 +52,8 @@ jobs:
         with:
           # Adjust image names as needed
           # For GHCR (lowercase username/org): Suggest adding '-app' or similar to distinguish
-          images: ghcr.io/${{ github.repository_owner }}/parent
-          #images: ghcr.io/acvatech/parent
+          #images: ghcr.io/${{ github.repository_owner }}/parent
+          images: ghcr.io/acvatech/parent
           #images: ghcr.io/${{ github.repository_owner }}/parent
           # For Docker Hub:
           # images: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}-app
